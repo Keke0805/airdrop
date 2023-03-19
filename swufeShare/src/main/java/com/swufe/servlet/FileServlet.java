@@ -38,8 +38,7 @@ public class FileServlet extends HttpServlet {
             tmpFile.mkdir();//创建这个临时目录
         }
 
-        // 处理上传的文件,一般都需要通过流来获取,我们可以使用 request.getInputstream(),原生态的文件上传流获取,十分麻烦
-        // 但是建议使用 Apache的文件上传组件来实现, common-fileupload,它需要依赖于commons-io组件;
+        // 使用 Apache的文件上传组件来实现, common-fileupload;
         try {
             // 1、创建DiskFileItemFactory对象，处理文件路径或者大小限制
             DiskFileItemFactory factory = getDiskFileItemFactory(tmpFile);
